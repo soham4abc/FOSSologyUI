@@ -17,6 +17,8 @@
 */
 
 import React, { useState, useEffect } from "react";
+import routes from "constants/routes";
+import { Link } from "react-router-dom";
 import arrayToTree from "array-to-tree";
 
 // Title
@@ -339,8 +341,16 @@ const Browse = () => {
                 {browseDataList?.map((data) => (
                   <tr key={data?.id} className="text-center">
                     <td>
-                      <div className="font-demi">{data?.uploadname}</div>
-                      <div className="font-size-small">{data?.description}</div>
+                      <Link
+                        to={`${routes.browseUploads.licenseBrowser}?uploadID=${data.id}`}
+                      >
+                        <div className="text-primary-color">
+                          <div className="font-demi">{data?.uploadname}</div>
+                          <div className="font-size-small">
+                            {data?.description}
+                          </div>
+                        </div>
+                      </Link>
                       <InputContainer
                         name="action"
                         type="select"
