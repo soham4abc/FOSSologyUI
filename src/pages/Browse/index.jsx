@@ -342,7 +342,7 @@ const Browse = () => {
                   <tr key={data?.id} className="text-center">
                     <td>
                       <Link
-                        to={`${routes.browseUploads.licenseBrowser}?uploadID=${data.id}`}
+                        to={`${routes.browseUploads.licenseBrowser}/${data.id}`}
                       >
                         <div className="text-primary-color">
                           <div className="font-demi">{data?.uploadname}</div>
