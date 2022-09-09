@@ -80,6 +80,11 @@ export const actionsOptions = [
     name: "Export Unified Report",
     reportFormat: "unifiedreport",
   },
+  {
+    id: 6,
+    name: "Download",
+    reportFormat: "download",
+  },
 ];
 export const initialMessage = {
   type: "success",
