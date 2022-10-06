@@ -1,6 +1,6 @@
 /*
  Copyright (C) 2021 Shruti Agarwal (mail2shruti.ag@gmail.com), Aman Dwivedi (aman.dwivedi5@gmail.com),
- Copyright (C) 2022 Soham Banerjee (sohambanerjee4abc@hotmail.com)
+ Copyright (C) 2022 Soham Banerjee (sohambanerjee4abc@hotmail.com), Krishna Mahato (krishhtrishh9304@gmail.com)
 
  SPDX-License-Identifier: GPL-2.0
 
@@ -19,7 +19,7 @@
 
 import React, { useState, useEffect } from "react";
 import routes from "constants/routes";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import arrayToTree from "array-to-tree";
 import messages from "constants/messages";
 
@@ -82,6 +82,8 @@ const Browse = () => {
   // qurey used for searching in the current page
   const [query, setQuery] = useState("");
   const [pages, setPages] = useState();
+
+  const history = useHistory();
 
   useEffect(() => {
     setMessage({
@@ -156,6 +158,7 @@ const Browse = () => {
       );
       return;
     }
+
     if (e.target.value !== "download") {
       scheduleReport(uploadId, e.target.value)
         .then((res) => {

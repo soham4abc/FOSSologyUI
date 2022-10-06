@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2022 Soham Banerjee(sohambanerjee4abc@hotmail.com)
+ Copyright (C) 2022 Soham Banerjee(sohambanerjee4abc@hotmail.com), Krishna Mahato (krishhtrishh9304@gmail.com)
 
  SPDX-License-Identifier: GPL-2.0
 
@@ -85,6 +85,11 @@ export const actionsOptions = [
     name: "Download",
     reportFormat: "download",
   },
+  {
+    id: 7,
+    name: "Import Report",
+    reportFormat: "importReport",
+  },
 ];
 export const initialMessage = {
   type: "success",
@@ -144,16 +149,16 @@ export const initialFolderListFile = [
 ];
 // constants for upload/ImportReport
 export const initialStateImportReport = {
-  folder: "",
-  editUpload: "",
-  reportUpload: "",
-  newLicense: "licenseCanditate",
-  licenseInfoInFile: true,
-  licenseConcluded: false,
-  licenseDecision: true,
-  existingDecisions: true,
-  importDiscussed: true,
-  copyright: false,
+  folder: 1,
+  upload: "",
+  report: null,
+  addNewLicensesAs: "candidate",
+  addConcludedAsDecisions: true,
+  addLicenseInfoFromInfoInFile: true,
+  addLicenseInfoFromConcluded: false,
+  addConcludedAsDecisionsOverwrite: true,
+  addConcludedAsDecisionsTBD: true,
+  addCopyrights: false,
 };
 
 // constants for upload/UploadFromServer
@@ -248,23 +253,26 @@ export const initialFolderList = [
 ];
 
 export const initialMantainanceFields = {
-  allNonSlow: false,
-  allOperations: false,
-  validateFolderContents: false,
-  rmvGoldFiles: false,
-  rmvOrphanedRows: false,
-  rmvLogFiles: false,
-  normalizePriority: false,
-  rmvUploads: false,
-  rmvTokens: false,
-  rmvTempTables: false,
-  analyseDb: false,
-  rmvRepoFiles: false,
-  dbReindexing: false,
-  verbose: false,
-  rmvRepoOldFiles1: false,
-  rmvRepoOldFiles2: false,
+  a: false,
+  A: false,
+  F: false,
+  g: false,
+  E: false,
+  L: false,
+  N: false,
+  R: false,
+  t: false,
+  T: false,
+  D: false,
+  Z: false,
+  I: false,
+  v: false,
+  o: false,
+  l: false,
+  logsDate: "",
+  goldDate: "",
 };
+
 export const accessLevels = [
   {
     id: 0,
@@ -298,9 +306,24 @@ export const accessLevels = [
   },
 ];
 
+export const userStatus = [
+  {
+    id: 0,
+    name: "Active",
+    disabled: false,
+    value: "active",
+  },
+  {
+    id: 1,
+    name: "Inactive",
+    disabled: false,
+    value: "inactive",
+  },
+];
+
 export const initialAddUserData = {
   name: "",
-  user_pass: "",
+  user_pass: null,
   description: "",
   accessLevel: "",
   rootFolderId: 0,

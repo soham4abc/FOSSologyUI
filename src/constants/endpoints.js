@@ -30,6 +30,7 @@ const endpoints = {
     scheduleReport: () => `${apiUrl}/report`,
     scheduleDownload: (uploadId) => `${apiUrl}/uploads/${uploadId}/download`,
     downloadReport: (reportId) => `${apiUrl}/report/${reportId}`,
+    importReport: (uploadId) => `${apiUrl}/report/import?upload=${uploadId}`,
   },
   auth: {
     tokens: () => `${apiUrl}/tokens`,
@@ -43,6 +44,9 @@ const endpoints = {
     getSingle: (userId) => `${apiUrl}/users/${userId}`,
     delete: (userId) => `${apiUrl}/users/${userId}`,
     add: () => `${apiUrl}/users`,
+    edit: (userId) => `${apiUrl}/users/${userId}`,
+    createToken: () => `${apiUrl}/users/tokens`,
+    getTokens: (type) => `${apiUrl}/users/tokens/${type}`,
   },
   folders: {
     getAll: () => `${apiUrl}/folders`,
@@ -77,14 +81,17 @@ const endpoints = {
       getAllDeletable: () => `${apiUrl}/groups/deletable`,
       delete: (groupId) => `${apiUrl}/groups/${groupId}`,
     },
-  },
-  license: {
-    get: () => `${apiUrl}/license`,
-    createCandidateLicense: () => `${apiUrl}/license`,
-  },
-  info: {
-    info: () => `${apiUrl}/info`,
-    health: () => `${apiUrl}/health`,
+    maintenance: {
+      create: () => `${apiUrl}/maintenance`,
+    },
+    license: {
+      get: () => `${apiUrl}/license`,
+      createCandidateLicense: () => `${apiUrl}/license`,
+    },
+    info: {
+      info: () => `${apiUrl}/info`,
+      health: () => `${apiUrl}/health`,
+    },
   },
 };
 

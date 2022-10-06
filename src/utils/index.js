@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2021 Aman Dwivedi (aman.dwivedi5@gmail.com)
+ Copyright (C) 2022 Krishna Mahato (krishhtrishh9304@gmail.com)
 
  SPDX-License-Identifier: GPL-2.0
 
@@ -16,23 +16,14 @@
  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-import endpoints from "constants/endpoints";
+export default function formatDate(date) {
+  const d = new Date(date);
+  let month = `${d.getMonth() + 1}`;
+  let day = `${d.getDate()}`;
+  const year = d.getFullYear();
 
-// Function for calling the fetch function for the APIs
-import sendRequest from "./sendRequest";
+  if (month.length < 2) month = `0${month}`;
+  if (day.length < 2) day = `0${day}`;
 
-export const getInfoApi = () => {
-  const url = endpoints.admin.info.info();
-  return sendRequest({
-    url,
-    method: "GET",
-  });
-};
-
-export const getHealthApi = () => {
-  const url = endpoints.admin.info.health();
-  return sendRequest({
-    url,
-    method: "GET",
-  });
-};
+  return [year, month, day].join("-");
+}

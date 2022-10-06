@@ -129,7 +129,7 @@ const Header = () => {
                   <NavDropdown.Item as={Link} to={routes.upload.vcs}>
                     From VCS
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={routes.upload.report}>
+                  <NavDropdown.Item as={Link} to={routes.upload.importReport}>
                     Import Report
                   </NavDropdown.Item>
                   <NavDropdown.Item as={Link} to={routes.upload.instructions}>
@@ -273,6 +273,14 @@ const Header = () => {
                       <div className="bg-secondaryColor text-white font-12">
                         <NavDropdown.Item as={Link} to={routes.admin.users.add}>
                           Add User
+                        </NavDropdown.Item>
+                      </div>
+                      <div className="bg-secondaryColor text-white font-12">
+                        <NavDropdown.Item
+                          as={Link}
+                          to={routes.admin.users.edit}
+                        >
+                          Edit User Account
                         </NavDropdown.Item>
                       </div>
                       <div className="bg-secondaryColor text-white font-12">
